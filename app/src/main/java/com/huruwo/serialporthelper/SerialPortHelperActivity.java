@@ -80,8 +80,9 @@ public class SerialPortHelperActivity extends AppCompatActivity {
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        Toast.makeText(getBaseContext(), FuncUtil.ByteArrToHex(comBean.bRec), Toast.LENGTH_SHORT).show();
-                        logListAdapter.addData(comBean.sRecTime+":   "+FuncUtil.ByteArrToHex(comBean.bRec));
+//                        String byteArrToHex = FuncUtil.ByteArrToHex(comBean.bRec);
+                        String byteArrToHex = new String(comBean.bRec);
+                        logListAdapter.addData(comBean.sRecTime+":   "+ byteArrToHex);
                         recy.smoothScrollToPosition(logListAdapter.getData().size());
                     }
                 });
